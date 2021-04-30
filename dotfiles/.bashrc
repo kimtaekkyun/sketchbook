@@ -117,45 +117,31 @@ if ! shopt -oq posix; then
 fi
 
 # Added by Taekkyun Kim
-#cowsay Hello TK
-#xcowsay Hello TK
+fortune
+xcowfortune &
 export PS1='\[\e[1;32m\]\u\[\e[0;39m\]@\[\e[1;36m\]\h\[\e[0;39m\]:\[\e[1;33m\]\w\[\e[0;39m\]\[\e[1;35m\]$(__git_ps1 " (%s)")\[\e[0;39m\] \[\e[1;37m\]\[\e[0;39m\]$ '
+cd() { builtin cd "$@" && ls; }
 alias t2='tree -L 2'
 alias t3='tree -L 3'
 alias t4='tree -L 4'
 alias ll='ls -alFh --color --group-directories-first'
 alias l='ls -lFh --color --group-directories-first'
-alias gitpush='git push origin HEAD:refs/for/oms_release'
-alias gitpushdrafts='git push origin HEAD:refs/drafts/oms_release'
-alias gits='git status'
-alias screenserial='/dev/ttyUSB0 115200'
-alias bsp='cd ~/OMS/bsp_high'
-alias imain='cd ~/OMS/imain_high'
-alias capture='cd ~/OMS/bsp_high/kernel/linux/drivers/media/platform/xilinx/'
-alias cvlib='cd ~/OMS/cvlib'
-alias sanity='cd ~/OMS/cvlib/tools/CaptureSanityTool/pyCaptureSanity'
 alias findsudo='getent group sudo | cut -d: -f4'
 alias tarx='tar -xzvf'
 alias tarc='tar -czvf'
 alias maketags='make ARCH=arm64 tags cscope'
 alias rm='rm -i'
+# git
+alias gpush='git push origin HEAD:refs/for/oms_release'
+alias gpushdrafts='git push origin HEAD:refs/drafts/oms_release'
+alias gs='git status'
+alias screenserial='/dev/ttyUSB0 115200'
+alias gresetclean='git reset --hard HEAD && git clean -xdf'
+# cd
+alias bsp='cd ~/OMS/bsp_high'
+alias imain='cd ~/OMS/imain_high'
+alias capture='cd ~/OMS/bsp_high/kernel/linux/drivers/media/platform/xilinx/'
+alias cvlib='cd ~/OMS/cvlib'
+alias sanity='cd ~/OMS/cvlib/tools/CaptureSanityTool/pyCaptureSanity'
+# ssh
 alias oms='ssh -p 9999 root@10.157.184.134'
-alias gitresetclean='git reset --hard HEAD && git clean -xdf'
-cd() { builtin cd "$@" && ls; }
-#rm() { mv "$@ ~/.trash" && echo "moved to ~/.trash"; }
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/home/taekkyunkim/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/home/taekkyunkim/anaconda3/etc/profile.d/conda.sh" ]; then
-#        . "/home/taekkyunkim/anaconda3/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/home/taekkyunkim/anaconda3/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
-# <<< conda initialize <<<
-
