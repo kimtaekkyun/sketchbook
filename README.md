@@ -1,2 +1,2 @@
-# Practice
-Practice Makes Perfect
+# Sketchbook
+Do any sketches here and get better! "Practice makes perfect."

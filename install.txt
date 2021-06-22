@@ -1,0 +1,6 @@
+tig
+anaconda
+code
+wandb
+tree
+git
